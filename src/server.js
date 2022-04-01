@@ -1,50 +1,42 @@
 import express from "express";
+import morgan from "morgan";
 
 const PORT = 3000;
 
 const app = express();
-const loggerMiddleware = logger("dev");
+const logger = morgan("dev");
+app.use(logger);
 
 
+const globalRouter = express.Router();
 
-
-
-const routerLogger = (req, res, next) => {
-    console.log("PATH",req.path);
-    next();
-}
-const methodLogger = (req, res, next) => {
-    console.log("METHOD",req.method);
-    next();
-}
-const  privateMiddleware = (req, res, next) =>  {
-    const url = req.url;
-    if(url === "/protected") {
-        return res.send("<h1>Not allowed</h1>");
-    }
-    console.log("Allowed, you may continue.");
-    next();
-} 
-
-const handleHome = (req, res)=> {
-    console.log("I'm homepage");
-    return res.send("Home");
+const handleHome = (req, res) =>{
+    res.send("Home");
 }
 
-const handleProtected = (req, res) => {
+globalRouter.get("/", handleHome);
 
+const userRouter = express.Router();
+
+const handleEditUser= (req,res) => {
+    res.send("Edit User");
 }
 
-const login = (req, res) => {
-    return res.send("login");
+userRouter.get("/edit", handleEditUser);
+
+const videoRouter = express.Router();
+
+const handleWatchVideos = (req, res) => {
+    res.send("Watch Video")
 }
-app.use(privateMiddleware);
-app.get("/",methodLogger,routerLogger, handleHome );
-app.get("/protected", handleProtected );
+
+videoRouter.get("/watch", handleWatchVideos);
+
+app.use("/", globalRouter );
+app.use("/users", userRouter );
+app.use("/videos", videoRouter );
 
 
 const handleListening = () => {console.log(`✅ server Listening on port  http://localhost:${PORT} 🚀 `);}
-
-app.get("/login", login );
 
 app.listen(PORT, handleListening);
