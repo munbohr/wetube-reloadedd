@@ -52,7 +52,7 @@ app.get("root", function) 처럼 2번째에는 function이 꼭 와야하는것 �
 
 ---
 
-express 에선 route handler에는 event같은 건 없지만 req(uest), res(pond)라는 섹시한
+express 에선 route handler에는 event같은 건 없지만 req(uest), res(ponse)라는 섹시한
 object 두 개가 있다. express가 무대 뒤에서 해주는 것이다(심지어 무료로!)
 req엔 ㅎㄷㄷ 할 정도로 많은게 존재한다! 전부 다 req object들이다.
 
@@ -84,7 +84,6 @@ next();
 
 ---
 
-<h1>#3.5</h1>
 gossipware 은 우리가 어디를 가려는지 말해준다
 
 ---
@@ -103,4 +102,18 @@ devDependencies는 개발자들이 개발하기 위해 필요한 것.
 
 ---
 
+<h1>#3.9</h1>
 () => function을 inline function이라고 부른다
+
+---
+
+<h1>#3.10</h1>
+middleware를 원하는 만큼 만들수 있음
+
+---
+
+누군가 대답하기 전까지는 전부 middleware이다.
+
+---
+
+순서가 중요하다.
