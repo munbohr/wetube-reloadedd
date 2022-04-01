@@ -23,3 +23,27 @@ nodemon --exec babel-node index.js 문장에서 nodemon --exec은 realTime으로
 babel은 NodeJS가 이해하지 못하는 최신 문장을 컴파일러 해준다.
 
 ---
+
+express function을 사용하면 express application을 생성해준다.
+
+---
+
+서버(?)랑 상호작용하는 그 모든 것들은 request 한다고 말한다.
+ex) /login을 들어가거나 google.com을 간다거나 하는 모든 것들
+내 서버는 그런 것들을 모두 listening 하고 있다.
+
+---
+
+app.listen은 바닐라JS에서 배웠던 variableName.addEventListener("interaction", functionName)
+이랑 비슷한 것이다.
+
+---
+
+google.con === google.com/ <-- 이런게 root이다.
+
+---
+
+https는 서버가 서버끼리 서로 소통하는 방법이다.
+GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 것이다.
+
+---
