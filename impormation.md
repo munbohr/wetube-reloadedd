@@ -68,3 +68,20 @@ h1, JSON도 개별적으로 res.send를 통해 사용할 수 있다
 
 middleware = 중간에 있는 소프트 웨어
 모든 middleware는 handler이고, 모든 handler는 middleware이다.
+nex();는 다음 함수를 호출한다, 다음 function이 없으면 작동 안함.
+
+---
+
+const gossipMiddleware = (req, res, next) => {
+return res.send("something");
+next();
+}
+하면은 다음 함수가 호출 되지 않는다.
+
+---
+
+gossipware 은 우리가 어디를 가려는지 말해준다 #3.5
+
+---
+
+middleware를 use하는게 먼저 오고, 그 다음에 URL의 get이 와야한다.
