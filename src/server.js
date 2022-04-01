@@ -5,7 +5,7 @@ const PORT = 3000;
 const app = express();
 
 const handleHome = (req, res)=> {
-    console.log(req);
+    console.log(res);
 }
 
 app.get("/", handleHome );
