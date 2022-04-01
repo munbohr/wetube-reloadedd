@@ -16,6 +16,10 @@
   },
   "homepage": "https://github.com/munbohr/wetube-reloaded#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.16.11",
     "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8"
   }
 }
