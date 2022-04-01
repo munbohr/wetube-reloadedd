@@ -5,6 +5,10 @@ const PORT = 3000;
 const app = express();
 const loggerMiddleware = logger("dev");
 
+
+
+
+
 const routerLogger = (req, res, next) => {
     console.log("PATH",req.path);
     next();
