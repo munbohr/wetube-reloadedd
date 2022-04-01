@@ -1,3 +1,21 @@
 {
-    "name": "wetube"
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "The best way to watch a videos.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munbohr/wetube-reloaded.git"
+  },
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "woojinMun/munbohr <tlstn2997kr@naver.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/munbohr/wetube-reloaded/issues"
+  },
+  "homepage": "https://github.com/munbohr/wetube-reloaded#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
