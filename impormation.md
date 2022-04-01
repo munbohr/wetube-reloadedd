@@ -47,3 +47,10 @@ https는 서버가 서버끼리 서로 소통하는 방법이다.
 GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 것이다.
 
 ---
+
+app.get("root", function) 처럼 2번째에는 function이 꼭 와야하는것 같다.
+
+---
+
+express 에선 route handler에는 event같은 건 없지만 req(uest), res(ponse)라는 섹시한
+object 두 개가 있다. express가 무대 뒤에서 해주는 것이다(심지어 무료로!)
