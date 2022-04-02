@@ -156,3 +156,15 @@ url 을 정리해주지 않으면 comment on video 혹은 delete video comment �
 
 - 현재 파일에서 벗어나고 싶으면 ../ 를 사용하면 된다.
   ./는 현재의 장소
+
+---
+
+<h1>#4.7</h1>
+
+- /: <-- ":"를 Parameter 라고 칭한다. 역할은
+  url에 변수를 넣게 해준다.
+
+- videoRouter.get("/:id", see);
+  videoRouter.get("/upload", upload); 처럼 upload가 :id
+  보다 밑에 있을때 upload를 :id로 인식하고 출력한다.
+  (순서 중요!)
