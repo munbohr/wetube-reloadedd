@@ -7,14 +7,12 @@ Wetube Clone built using NodeJS, Express, Mongo and ES6 💖
 /login -> Login
 /search -> Search
 
-/users/join -> Join
-/users/login -> login
-/users/edit -> Edit Profile
-/users/delete -> Delete Profile
+/users/:id -> See user
+/users/logout -> Log Out
+/users/edit -> Edit My Profile
+/users/delete -> Delete My Profile
 
-/videos/search -> Search Video
-/videos/watch -> Watch Video
-/videos/edit -> Edit video
-/videos/delete -> Delete Video
-/videos/comment -> Comment on a video
-/videos/comment/delete -> Delete a Comment of a video
+/videos/:id -> See Video
+/videos/:id/edit -> Edit Video
+/videos/:id/delete -> Delete Video
+/videos/upload -> Upload Video
