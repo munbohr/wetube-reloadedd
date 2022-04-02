@@ -1,6 +1,8 @@
 import express from "express";
 import {see, edit, upload, deleteVideo} from "../controllers/videoController"
 
+console.log(process.cwd());
+
 const videoRouter = express.Router();
 
 videoRouter.get("/:id(\\d+)", see);
