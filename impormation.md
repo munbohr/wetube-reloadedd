@@ -82,9 +82,7 @@ next();
 }
 하면은 다음 함수가 호출 되지 않는다.
 
----
-
-gossipware 은 우리가 어디를 가려는지 말해준다
+- gossipware 은 우리가 어디를 가려는지 말해준다
 
 ---
 
@@ -108,15 +106,12 @@ devDependencies는 개발자들이 개발하기 위해 필요한 것.
 ---
 
 <h1>#3.10</h1>
-middleware를 원하는 만큼 만들수 있음
 
----
+- middleware를 원하는 만큼 만들수 있음
 
-누군가 대답하기 전까지는 전부 middleware이다.
+- 누군가 대답하기 전까지는 전부 middleware이다.
 
----
-
-순서가 중요하다.
+- 순서가 중요하다.
 
 ---
 
@@ -128,22 +123,19 @@ Router는 우리가 작업중인 주제를 기반으로 url을 구획화한다.
 ---
 
 <h1>#4.2</h1>
-코드를 작성한만큼 정리하는데에 시간을 할애해야한다.
-NodeJS는 모든 파일은 모듈이고, 거품과 같다.
-import하기 전에 export 먼저 해야한다.
-export는 무언가를 밖에 공유하는 것이다.
-default export를 했기때문에 밖에선 이름을 바꿔도 상관이 없다.
 
----
+- 코드를 작성한만큼 정리하는데에 시간을 할애해야한다.
+  NodeJS는 모든 파일은 모듈이고, 거품과 같다.
+  import하기 전에 export 먼저 해야한다.
+  export는 무언가를 밖에 공유하는 것이다.
+  default export를 했기때문에 밖에선 이름을 바꿔도 상관이 없다.
 
-#4.2 진행중 videoController에서 export를 해주지 않아서 찾고 있었음
+- #4.2 진행중 videoController에서 export를 해주지 않아서 찾고 있었음
 
----
-
-default에서 export 할 때엔 내가 원하는 아무 이름이나 가능한데
-export const 이렇게 되어있으면 그 뒤에 {변수명?} 대로 가져와야함
-파일은 하나의 default밖에 못가진다.
-import {variable1, variable2, variable3 } from "파일 위치";형식으로 가져올 수 있다.
+- default에서 export 할 때엔 내가 원하는 아무 이름이나 가능한데
+  export const 이렇게 되어있으면 그 뒤에 {변수명?} 대로 가져와야함
+  파일은 하나의 default밖에 못가진다.
+  import {variable1, variable2, variable3 } from "파일 위치";형식으로 가져올 수 있다.
 
 - 자바 스크립트에서 delete는 이미 예약 되어있어서 변수명으로 사용할 수 없다,
 
@@ -158,13 +150,9 @@ url 을 정리해주지 않으면 comment on video 혹은 delete video comment �
 하나의 JS 파일을 통째로 import하려면 const 무슨무슨Router = express.Router(); 하면 된다
 그리고 export는 잊지말고 해줘야한다.
 
----
+- 위에서도 말했듯이 import {variable1, variable2, variable3 } from "파일 위치";를 하지 않으면
+  (export한 variable이랑 똑같아야 한다 -중요!)
+  Node.js는 길을 잃는다.
 
-위에서도 말했듯이 import {variable1, variable2, variable3 } from "파일 위치";를 하지 않으면
-(export한 variable이랑 똑같아야 한다 -중요!)
-Node.js는 길을 잃는다.
-
----
-
-현재 파일에서 벗어나고 싶으면 ../ 를 사용하면 된다.
-./는 현재의 장소
+- 현재 파일에서 벗어나고 싶으면 ../ 를 사용하면 된다.
+  ./는 현재의 장소
