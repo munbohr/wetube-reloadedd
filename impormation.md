@@ -133,3 +133,7 @@ NodeJS는 모든 파일은 모듈이고, 거품과 같다.
 import하기 전에 export 먼저 해야한다.
 export는 무언가를 밖에 공유하는 것이다.
 default export를 했기때문에 밖에선 이름을 바꿔도 상관이 없다.
+
+---
+
+#4.2 진행중 videoController에서 export를 해주지 않아서 찾고 있었음
