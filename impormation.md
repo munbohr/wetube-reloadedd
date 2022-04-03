@@ -228,3 +228,17 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - 여기도 마찬가지로 if만 쓰거나 if ~ else 까지 쓸 수 있다.
 - <h3>💥Pug는 띄어쓰기에 민감하다💥</h3>
+
+<h1>#5.8</h1>
+
+- each variable_name in const 위치? 하면 array를
+  가져올 수 있음 variable_name 이건 아무렇게 바뀌여도
+  상관없는 거 같은데 const 이 부분은 바꾸면 안된다.
+
+- array가 비어있으면 그냥 안뜬다. 빈공간으롬나 나옴
+  여기다가 even 넣어서 array가 없으면 다른 문구가
+  나오게 만들 수 있다. 즉 Pug가 자동적으로 array안에
+  무엇이 없는지 체크한다.
+
+  - 댓글이나 비디오, 다른 무엇이든 리스트를 보여주고
+    싶을때 interation을 쓴다.
