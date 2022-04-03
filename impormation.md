@@ -196,3 +196,17 @@ url 을 정리해주지 않으면 comment on video 혹은 delete video comment �
 extends를 사용해서 확장? 아무튼 뭘 할수 있다. Recap들으면 알 수 있을것 같다.
 block은 templete의 창문같은 것이다. 한마디로 요약하자면
 다른 pug 파일들이 내용을 채워넣을 공간을 마련해 주는 것이다.
+
+---
+
+<h1>#5.4</h1>
+
+- block을 써놓고 다른 파일에서 사용하지 않으면 그 부분은 그냥 없는 것이다.
+
+- block blabla하면 그 이름까지 정확히 같아야 한다. export default처럼 이름 막
+  사용하면 안된다.
+
+- render는 2개의 argument를 받는다
+  하나는 view, 다른 하나는 템플릿에 보낼 변수
+  템플릿에 변수를 생성하는법 #{}
+  res.render("Pug", {변수 2개 이상 가능 });
