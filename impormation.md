@@ -210,3 +210,10 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
   하나는 view, 다른 하나는 템플릿에 보낼 변수
   템플릿에 변수를 생성하는법 #{}
   res.render("Pug", {변수 2개 이상 가능 });
+
+---
+
+<h1>#5.6</h1>
+
+- link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+  를 해주면 그나마 괜찮은 css를 입힐 수 있다.
