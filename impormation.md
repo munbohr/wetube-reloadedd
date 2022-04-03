@@ -192,3 +192,7 @@ url 을 정리해주지 않으면 comment on video 혹은 delete video comment �
 ---
 
 <h1>#5.3</h1>
+
+extends를 사용해서 확장? 아무튼 뭘 할수 있다. Recap들으면 알 수 있을것 같다.
+block은 templete의 창문같은 것이다. 한마디로 요약하자면
+다른 pug 파일들이 내용을 채워넣을 공간을 마련해 주는 것이다.
