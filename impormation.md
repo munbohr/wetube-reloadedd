@@ -217,3 +217,14 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - link(rel="stylesheet" href="https://unpkg.com/mvp.css")
   를 해주면 그나마 괜찮은 css를 입힐 수 있다.
+
+<h1>#5.7</h1>
+
+- h1=pageTitle 의 경우엔 오직 하나의 값만을 가진다.
+  여기에선 pageTitle이 variable Name이다.
+  그러면 여기에선 평범한 text로 읽힌다.
+
+- 이 파트는 복습이 필요한 파트입니다.
+
+- 여기도 마찬가지로 if만 쓰거나 if ~ else 까지 쓸 수 있다.
+- <h3>💥Pug는 띄어쓰기에 민감하다💥</h3>
