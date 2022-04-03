@@ -172,3 +172,23 @@ url 을 정리해주지 않으면 comment on video 혹은 delete video comment �
 <h1>#4.8</h1>
 
 - 정규식에선 (\\n이 string 출력? 하는 것이고 , \\d+는 숫자만 체킹?하는 것이다.)
+
+---
+
+<h1>#5.2</h1>
+
+- app.set("views" process.cwd() + "/src/views");를 하면 퍼그를 그 파일 안에서 찾는다, 안그러면 nodeJS가 길을 잃는다.
+
+- #{}가 pug에서 변수를 사용하는 법이다.
+
+- res.render를 사용해 pug를 호출할 수 있다.
+
+- 퍼그 사용시 주의점은 첫번째론파일명은 띄어쓰기가 있으면 안된다.
+  파일명을 전부 다 소문자로 작성해야한다.
+
+- partials로 자주 쓰이는 부분만 복붙해서 작성할 수 있음
+  ex) include 파일 위치/head.pug
+
+---
+
+<h1>#5.3</h1>
