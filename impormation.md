@@ -296,3 +296,18 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - 위에 내용을 내 방식대로 해석하자면 interaction은 HTML 형식을
   가져오는 것이고, mixin은 HTML 형식 안에 들어갈 데이터를 가져온다.
+
+<h1>#6.0</h1>
+
+- post를 사용하는 것은 assume하다.  
+
+-  백틱 사용중 `#{video.id}`했는데 적용이 안됬다.
+
+- href에 변수를 사용하는 법은 + variable 혹은 
+  `${variable}`로 적용 가능하다
+
+- #{}는 varible과 text를 섞어서 작성하는 방식이다.
+  하지만 이걸 attribute에는 사용할 수 없다.
+
+- const { id } = req.params;과 const id = req.params.id
+  는 같다. 전자는 ES6형식 후자는 JS식(?)
