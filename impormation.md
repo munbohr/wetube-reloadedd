@@ -64,7 +64,7 @@ return res.end();는 server 호출하는 것은 안하겠다고 선언하는 것
 
 <h1>#3.4</h1>
 
-- h1, JSON도 개별적으로 res.send를 통해 사용할 수 있다
+-   h1, JSON도 개별적으로 res.send를 통해 사용할 수 있다
 
 ---
 
@@ -274,6 +274,25 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 ---
 
-<h1>#5.10 Recap</h1>
+<h1>💥#5.10 Recap💥</h1>
 
 - mixin은 가끔 쓰고 interation은 자주 쓸 예정
+
+- each X in Y에서 Y는 반드시 존재해야한다.
+
+- Y는 render로 보내지는 variable이다.
+
+- +video()에 X(argument)를 대입하지않으면 오류가 난다.
+
+-  mixin을 사용할때에는 +를 꼭 사용해야한다.
+
+- 그리고 mixin을 template에 include 해줘야한다.
+
+- footer에다가 +를 안붙인 이유는 그냥 HTML이기 때문이다.
+
+- 요약하자면 list의 모든 element 들을 HTML에 보여주는 것이
+  interation의 역할이고, 다른 데이터를 포함하지만 같은 형태의
+  HTML을 보여주는게 mixin의 역할이다.
+
+- 위에 내용을 내 방식대로 해석하자면 interaction은 HTML 형식을
+  가져오는 것이고, mixin은 HTML 형식 안에 들어갈 데이터를 가져온다.
