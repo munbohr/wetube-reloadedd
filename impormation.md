@@ -64,19 +64,23 @@ return res.end();는 server 호출하는 것은 안하겠다고 선언하는 것
 
 <h1>#3.4</h1>
 
-h1, JSON도 개별적으로 res.send를 통해 사용할 수 있다
+- h1, JSON도 개별적으로 res.send를 통해 사용할 수 있다
 
 ---
 
 <h1>#3.5</h1>
-middleware = 중간에 있는 소프트 웨어
-모든 middleware는 handler이고, 모든 handler는 middleware이다.
-nex();는 다음 함수를 호출한다, 다음 function이 없으면 작동 안함.
+
+- middleware = 중간에 있는 소프트 웨어
+
+- 모든 middleware는 handler이고, 모든 handler는 middleware이다.
+
+- nex();는 다음 함수를 호출한다, 다음 function이 없으면 작동 안함.
 
 ---
 
 <h1>#3.5</h1>
-const gossipMiddleware = (req, res, next) => {
+
+- const gossipMiddleware = (req, res, next) => {
 return res.send("something");
 next();
 }
@@ -87,13 +91,15 @@ next();
 ---
 
 <h1>#3.6</h1>
-middleware를 use하는게 먼저 오고, 그 다음에 URL의 get이 와야한다.
+
+- middleware를 use하는게 먼저 오고, 그 다음에 URL의 get이 와야한다.
 마지막 함수는 next();를 굳이 추가 할 필요가 없다.
 
 ---
 
 <h1>#3.8</h1>
-Recap =>
+
+- Recap =>
 dependencies, devDependencies에 있는 버전 정보를 확인해서 npm i 할 때
 모두 다운받아준다. dependencies는 프로젝트가 작동하기 위해 필요한 것,
 devDependencies는 개발자들이 개발하기 위해 필요한 것.
@@ -101,7 +107,8 @@ devDependencies는 개발자들이 개발하기 위해 필요한 것.
 ---
 
 <h1>#3.9</h1>
-() => function을 inline function이라고 부른다
+
+- () => function을 inline function이라고 부른다
 
 ---
 
@@ -116,7 +123,8 @@ devDependencies는 개발자들이 개발하기 위해 필요한 것.
 ---
 
 <h1>#4.0</h1>
-Router는 controler와 url을 쉽게 관리해준다.
+
+- Router는 controler와 url을 쉽게 관리해준다.
 쉽게 말해 미니 어플리케이션을 만들어주는 것이다.
 Router는 우리가 작업중인 주제를 기반으로 url을 구획화한다.
 
@@ -141,13 +149,14 @@ Router는 우리가 작업중인 주제를 기반으로 url을 구획화한다.
 
 <h1>#4.4</h1>
 
-url 을 정리해주지 않으면 comment on video 혹은 delete video comment 같은 케이스가 발생한다.
+- url 을 정리해주지 않으면 comment on video 혹은 delete video comment 같은 케이스가 발생한다.
 이걸 다 타이핑 해야하는데 매우 귀찮기때문에 구획을 나눠야 한다. 즉 "분할 정복!"
 
 ---
 
 <h1>#4.5</h1>
-하나의 JS 파일을 통째로 import하려면 const 무슨무슨Router = express.Router(); 하면 된다
+
+- 하나의 JS 파일을 통째로 import하려면 const 무슨무슨Router = express.Router(); 하면 된다
 그리고 export는 잊지말고 해줘야한다.
 
 - 위에서도 말했듯이 import {variable1, variable2, variable3 } from "파일 위치";를 하지 않으면
@@ -262,3 +271,9 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
   정상적으로 작동된다.
 
 - each ~ in 안에 ~는 객체인데  array의 한 item이다.
+
+---
+
+<h1>#5.10 Recap</h1>
+
+- mixin은 가끔 쓰고 interation은 자주 쓸 예정
