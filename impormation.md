@@ -246,5 +246,19 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - li=video.title처럼 객체여도 된다.
 
+- mixin은 일종의 똑똑한 partial이다.
+즉 데이터를 받을 수 있는 일종의 미리 만들어진 HTML Block이다.
+
 - 블록은 같은 형태를 지니지만 안에 있는 서로 다른
   데이터를 가질 때 mixin 을 이용한다.
+
+- mixin video(video)을 사용해 무엇을 받을지 정할 수 있음.(?)
+
+- mixin의 경우엔 +를 넣어야한다. 그리고 Router처럼 import 할 때엔
+  include 경로 를 사용해서 넣어주면된다. 이거 안하면 경로 못찾는다고
+  뜬다.
+
+- extends base.pug에서 pug를 지워줘도 Pug는 똑똑하기 때문에 
+  정상적으로 작동된다.
+
+- each ~ in 안에 ~는 객체인데  array의 한 item이다.
