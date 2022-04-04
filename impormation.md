@@ -215,10 +215,10 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 - block blabla하면 그 이름까지 정확히 같아야 한다. export default처럼 이름 막
   사용하면 안된다.
 
-- render는 2개의 argument를 받는다
+- render는 2  개의 argument를 받는다
   하나는 view, 다른 하나는 템플릿에 보낼 변수
   템플릿에 변수를 생성하는법 #{}
-  res.render("Pug", {변수 2개 이상 가능 });
+  res.render("Pug", {변수 2개 이상 가능 }, 이 이외에 변수 추가 가능);
 
 ---
 
@@ -311,3 +311,40 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - const { id } = req.params;과 const id = req.params.id
   는 같다. 전자는 ES6형식 후자는 JS식(?)
+
+ <h1>#6.1</h1> 
+ 
+ - video는 array에서 videos를 찾고 있다. watch template을
+  render한다.
+
+- ternary operator(조건문)를 사용할 수 있는데 
+#{video.views ===  1  ? "view" : "views"} 이렇게 사용할 수 있다
+
+- "&rarr;"는 오른쪽 화살표 "&larr;" 는 왼쪽 화살표이다.
+
+- absoulte와 relatie url의 차이점은 /edit하면 앞에 문장이 사라지고
+  root 경로 + /edit만 뜬다. 근데 그냥 edit하면 앞에 문장 포함으로
+  간다. root 경로 + /videos/edit으로 간다!
+
+<h1>#6.2</h1>
+
+- 똑같은 url을 쓸 것이라서 action=""를 지워줬다.
+  action="경로"하면 예를 들어 localhost:Num/videos
+  이런 것들이 지워지고 localhost:/경로로 나오기 때문에
+  action은 특별한 상황이 아니면 사용하지 않는다.
+
+- 기본값으로는 method는 GET이다.
+
+-💥 post 방식은 파일을 보내거나, database에 있는 값은
+  바꾸는 뭔가를 보낼 때 사용한다. 💥
+
+- 💥 But 바꿀 data를  보내거나, file을 보낼 때, 웹사이트에 
+  로그인 할 때에도 post를 사용한다💥                         
+
+<h1>#6.3</h1>
+
+- database를 수정하거나 변경하거나 삭제할 땐 method="POST"
+  를 사용하고 , 그게 아니라 data만 받는 목적이라면 
+    method="GET"을 사용한다.
+
+-<h4> 한번 더 강조하자면 render로 Pug , 즉, HTML을 load 할 수 있다.</h4>
