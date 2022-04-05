@@ -405,7 +405,7 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - <h3>오타 조심하자!</h3>
 
-<h1>#6.7</h1>
+<h1>#6.7~#6.8</h1>
 
 - <h3>MongoDB 설치 하는 법은 MongoDB -> resource -> server -> installatin 
   가면 확인 할 수 있다. </h3>
@@ -413,3 +413,28 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 - <h2>나와 같은 윈도우 개발자들은 chocolatey를 깔아서 mongodb 검색 후 
   choco install mongodb이 나오는데 copy 해서 붙여 넣으면 된다. chocoalatey는
   powersehll에서 열어야 하는데 명심할 것은 관리자 모드로 해야한다는 것이다.</h2>
+
+- import mongoose from "mongoose";
+  mongoose.connect("mongodb://127.0.0.1:27017/wetube"); 처럼 써서 mongodb를
+  가져 올 수 있다. mongodb://127.0.0.1:27017/같은 경우는 mongodb가 존재하는
+  디렉토리에서 mongo라는 명령어를 쳐서 connecting to: 옆에 코드를 따오면 된다.
+
+- import "./db";로 import 할 수 있다.
+
+- on과 once의 차이점은 on은 여러번 계속 발생 시킬 수 있다. 예를 들자면 클릭같은 이벤트
+
+<h2>WSL에서 mongo 실행방법
+
+1. WSL 터미널을 연다
+2. 'sudo apt update' 을 입력하고 apt 업데이트
+3. 'sudo apt-get install mongodb' 을 입력하고 설치한다
+4. 'mongod --version' 을 입력하고 설치가 잘 되었는지 확인한다
+5. 'sudo service mongodb start' 을 입력하고 mongo 를 사용할 수 있게 서비스 시작
+6. 'mongo' 를 입력하면 mongo shell로 이동한다
+7. 다 사용했으면 'sudo service mongodb stop' 을 입력하고 서비스를 종료한다
+
+- 'sudo service mongodb status'를 입력하면 지금 mongodb 서비스가 실행중인지 알 수 있다
+  실행중이면 오른쪽에 [OK] 아니면 [Fail]
+  인용문 from jjhun1228</h2>
+
+- db가 실행되는게 느리다.
