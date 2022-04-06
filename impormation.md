@@ -490,3 +490,50 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - mongoose는 Video.find({}) 부분을 database에서 불러올 것이다.
   database가 반응하면, mongoose는 이 function을 실행시킬 것이다.
+
+- 우리의 logger는 request가 완성되면 출력이 돼야한다.
+
+- callback은 특정 코드를 마지막에 실행되게 한다.
+
+---
+
+<h1>#6.13</h1>
+
+- callback의 장점은 에러들을 바로 여기에서 볼 수 있다는 것이다.
+
+- 하지만 callback의 단점은 function안에 function을 작성해야하는 것이다.
+
+- promise의 차이점은, await를 find앞에 적으면 find는 우리가 callback을
+  필요로 하지 않는다는 것을 안다. 그렇기에 find는 찾아낸 video를 바로
+  출력해줄 것이다.
+
+- await이 대단한 이유는 await가 database를 기다려주기 때문이다.
+
+- 코딩 규칙상 await는 function 안에서만 사용이 가능한데 해당 function이
+  asynchronous일 때만 가능하다 그렇기 때문에 async를 적어주는 것이다.
+
+- error를 살펴보면 callback의 경우 어디에서 무엇이 오는지 명확한데,
+  promise는 아직 명확하지 않다. 이 때 두가지 옵션이 있는데
+  첫 번째는 try를 사용하는 것이고, 이 방법은 res.render를 실행하다 에러 발생시
+  , 이 코드로 넘어가서 실행시키는 것이다. 에러를 인식 하는 것이 catch의 기능이다.
+
+- 이 operation의 await가 있는 코드에 오류가 있다면 await가 있는 코드는 출력되지
+  않을 것이다. return 모시깽이가 실행 ㄴㄴ
+
+  ***
+
+  <h1>#6.14</h1>
+
+  - return 을 안해서 작동은 모두 잘 될 것이다.
+
+  - render 를 절대로 두번 동시에 쓰면 안된다. 이미 render 한 것을 render 할 순 없다.
+
+  - return을 사용하는 이유는 이 function이 render 작업 후에 종료되도록 하기 위해서이다.
+
+  - 계속 강조하지만 return이 아니라 실행되는 function들에 집중해야 된다.
+
+  - 예를 들어 redirect 뒤에 render를 할 수 없다.
+
+  - return은 필수가 아니라 필요한 function에만 넣어주는 선택사항이다.
+
+  - return을 적어서 실수를 방지해 주는 것이 좋다.
