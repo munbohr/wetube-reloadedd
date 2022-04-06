@@ -437,4 +437,21 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
   실행중이면 오른쪽에 [OK] 아니면 [Fail]
   인용문 from jjhun1228</h2>
 
-- db가 실행되는게 느리다.
+- db가 실행되는게 느리다. 그래서 좀 느리게 나온다.
+
+- 수정도 할 수 있고, 삭제도 가능하게 해주는 행위를 일반적으로 CRUD라고 한다.
+  C는 create,R은 read, U는 update , D는 delete
+
+<h1>#6.10</h1>
+
+- const videoSchema = new mongoose.Schema({
+
+}) 이 안에 우리들의 비디오 형식을 작성할 것 이다.
+비디오별 데이터가 가진 형식을 정의해주고 있다.
+id를 사용하지 않는다. (곧 얘기해주실 예정)
+
+- 이 영상에서는 우리의 video 형태를 정의해줬다.
+
+- title을 보내면 데이터의 형식이 맞는지 확인해 준다.
+
+- <h2>db를 mongoose와 연결시켜서 video model을 인식시킨다.</h2>

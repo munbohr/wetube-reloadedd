@@ -9,3 +9,4 @@ const handleError = (error) => console.log("❌ DB Error", error);
 
 db.on("error", handleError);
 db.once("open", handleOpen);
+
