@@ -455,3 +455,35 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - title을 보내면 데이터의 형식이 맞는지 확인해 준다.
 
 - <h2>db를 mongoose와 연결시켜서 video model을 인식시킨다.</h2>
+
+---
+
+<h1>#6.11</h1>
+
+- Video.find()를 사용하는 법은 두가지가 있는데,
+  먼저 callback function을 활용하는 방법이 있고,
+  둘째는 promise를 활용하는 방법이 있다.
+
+- callback 이란 무언가가 발생하고 난 다음 호출되는
+  function을 말한다. 즉, JS에서 기다림을 표현하는 하나의
+  방법이라고 생각하면 된다.
+
+- 코드 실행 중 오류가 발생할 수 도 있는데 그 이유는 우리가
+  받는 데이터는 JS에 없기 때문이다!
+
+- Nicolas쌤: promise가 가장 섹시한 방법이다
+
+- Video.find({}, )에 중괄호는 search terms를 나타내는데
+  이 search terms가 비어있으면 모든 형식을 찾는다는 것을
+  의미한다.
+
+- callback은 err와 docs라는 signature를 가진다.
+  이 부분이 우리가 찾는 function이다.
+
+- <h2>💥Callback explanation이 엄청 중요하다!💥</h2>
+
+다음 강의에 계속...
+
+<h1>#6.12</h1>
+
+-
