@@ -484,6 +484,9 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 다음 강의에 계속...
 
+---
+
 <h1>#6.12</h1>
 
--
+- mongoose는 Video.find({}) 부분을 database에서 불러올 것이다.
+  database가 반응하면, mongoose는 이 function을 실행시킬 것이다.
