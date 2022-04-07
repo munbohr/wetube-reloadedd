@@ -537,3 +537,16 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
   - return은 필수가 아니라 필요한 function에만 넣어주는 선택사항이다.
 
   - return을 적어서 실수를 방지해 주는 것이 좋다.
+
+  <h1>#6.15</h1>
+
+  - schema는 우리의 비디오 형태를 정의해준다.
+
+- split은 string들을 분리하는 기능을 가지고 있다, splitter 또는 separator
+  가 그 분리의 기준이 되는데
+
+- "food,movies ".split(",").map(word => `${word}`)
+  -> ["#food""#movies""#music"]
+  이게 바로 해시태그를 구성하는 원리가 될 것이다.
+
+  - #6.15의 object는 JS에 저장은 되있지만 database에는 저장 되어있지않다.
