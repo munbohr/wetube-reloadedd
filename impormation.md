@@ -520,27 +520,27 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - 이 operation의 await가 있는 코드에 오류가 있다면 await가 있는 코드는 출력되지
   않을 것이다. return 모시깽이가 실행 ㄴㄴ
 
-  ***
+---
 
   <h1>#6.14</h1>
 
-  - return 을 안해서 작동은 모두 잘 될 것이다.
+- return 을 안해서 작동은 모두 잘 될 것이다.
 
-  - render 를 절대로 두번 동시에 쓰면 안된다. 이미 render 한 것을 render 할 순 없다.
+- render 를 절대로 두번 동시에 쓰면 안된다. 이미 render 한 것을 render 할 순 없다.
 
-  - return을 사용하는 이유는 이 function이 render 작업 후에 종료되도록 하기 위해서이다.
+- return을 사용하는 이유는 이 function이 render 작업 후에 종료되도록 하기 위해서이다.
 
-  - 계속 강조하지만 return이 아니라 실행되는 function들에 집중해야 된다.
+- 계속 강조하지만 return이 아니라 실행되는 function들에 집중해야 된다.
 
-  - 예를 들어 redirect 뒤에 render를 할 수 없다.
+- 예를 들어 redirect 뒤에 render를 할 수 없다.
 
-  - return은 필수가 아니라 필요한 function에만 넣어주는 선택사항이다.
+- return은 필수가 아니라 필요한 function에만 넣어주는 선택사항이다.
 
-  - return을 적어서 실수를 방지해 주는 것이 좋다.
+- return을 적어서 실수를 방지해 주는 것이 좋다.
 
   <h1>#6.15</h1>
 
-  - schema는 우리의 비디오 형태를 정의해준다.
+- schema는 우리의 비디오 형태를 정의해준다.
 
 - split은 string들을 분리하는 기능을 가지고 있다, splitter 또는 separator
   가 그 분리의 기준이 되는데
@@ -550,3 +550,24 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
   이게 바로 해시태그를 구성하는 원리가 될 것이다.
 
   - #6.15의 object는 JS에 저장은 되있지만 database에는 저장 되어있지않다.
+
+---
+
+  <h1>#6.16</h1>
+  
+- title을 string으로 받도록 해서 숫자를 사용하더라도 String값으로 반환한다.
+
+- number 값을 받는 object에 string이 있으면 그냥 그 값을 받지 않는다.
+
+- 우리는 video.save를 실행하지만 await 을 해야한다, 그 이유는 데이터를
+  database에 전송하는데 시간이 걸리기 때문이다.
+
+- await video.save(); 이런 식으로 정보를 db에 저장한다. f5를 눌러도
+  db에 저장되어 있기때문에 사라지지 않는다.
+
+- mongo 안에서 use wetube하고 show collection을 하면 저장된
+  data가 나온다. 여기서 collection은 document들의 묶음이라고
+  생각하면 된다.
+
+- 값이 잘못되면 웹을 불러오지 않는다. 즉, database는 우리의
+  실수를 막아주고 있다.
