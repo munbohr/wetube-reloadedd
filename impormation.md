@@ -522,7 +522,7 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 ---
 
-  <h1>#6.14</h1>
+<h1>#6.14</h1>
 
 - return 을 안해서 작동은 모두 잘 될 것이다.
 
@@ -538,7 +538,9 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - return을 적어서 실수를 방지해 주는 것이 좋다.
 
-  <h1>#6.15</h1>
+---
+
+<h1>#6.15</h1>
 
 - schema는 우리의 비디오 형태를 정의해준다.
 
@@ -571,3 +573,44 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - 값이 잘못되면 웹을 불러오지 않는다. 즉, database는 우리의
   실수를 막아주고 있다.
+
+---
+
+<h1>#6.17</h1>
+
+- data에 required를 넣지 않으면 그 data를 관련 줄을 지워도 정상작동된다.
+
+- 예시) Discriptions: {type: Date, required: true}
+
+- mongoose에 데이터 타입을 더 구체적으로 작성할수록 더 편하다.
+
+- await에서 에러가 생기면 그냥 다 날아가버리는 것이다.
+
+- 에러로 인한 피해를 막으려면 try {} catch {}를 꼭 해야 한다.
+
+- required를 사용하면 그 값이 없어서는 안된다. 안그러면
+  무한로딩의 늪..
+
+- 변수에 errorMessage: error. \_message를 사용해서 에러 문구를
+  창에 띄울 수 있게 된다. 물론 이것도 mongoose가 만들어주는 것이다!
+
+- createdAt: {type: Date, required: true, default: Date.now} 하면서 Date.now()를
+  하지 않는데 그 이유는 ()를 넣으면 바로 실행되기 때문이다.
+
+- <h3>mongo에서 저장된 db를 보는 법은 show dbs -> use DBS_NAME -> db.videos.find()하면 db에 저장된 값이 나온다</h3>
+
+- #6.17 요약
+
+1. 먼저 에러를 만들었다
+2. required를 썼는데 default도 같이 써주지 않아서
+   required가 오류가 났다.
+3. 그래서 catch에 대해서 배웠다.
+4. 그 덕에 에러 메세지 template를 render 해서
+   보내줄 수 있었다.
+5. error가 있는 경우에는 errorMessage와 함께
+   render
+6. 그리고 try와 catch에 대해서 배웠다.
+7. 기억할 것은 'await'의 코드에 error가 있다면
+   JS는 더 이상 코드를 실행시키지 않을 것이다.
+8. JS에서 try와 catch가 같이 와야한다.
+   (만약 catch가 없다면 우리의 서버는 아무것도 안함.)
