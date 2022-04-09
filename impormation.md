@@ -648,3 +648,22 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - await을 사용할 때에는 (변수) 옆에 async를 꼭 붙이자 예를 들어 async(error)같이
   붙여야한다.
+
+---
+
+<h1>#6.20</h1>
+
+- .excu() 는 query를 실행시키는 것이다. Mongoose 내부적으로 우리가 excute를
+  호출하면 promise가 return이 된다.
+
+- 만약 호출하는 링크의 :id가 다를 시에 영상이 null(존재하지 않음)이여서 무한
+  로딩, 즉 오류가 난다. 이 에러는 MongoDB에서부터 나온 Error가 아니다. 이런
+  경우엔 null로 부터 Title이라는 property를 찾을 수 없다는게 문제인 것이다.
+
+- 우리는 어떤 조건이 성공하더라도 다른 조건또한 성립하는지 확인해야한다.
+
+- if 안에 return을 넣지 않으면 그 조건문이 성립하더라도 밑에 코드가 실행이
+  돼서 꼭 return을 넣어줘야한다.
+
+- 해시태그가 array로 나와서 당황스러울 땐 value= video.hashtags.join()를 하면
+  array가 벗겨진 채로 나온다.
