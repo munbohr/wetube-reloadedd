@@ -507,6 +507,9 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
   필요로 하지 않는다는 것을 안다. 그렇기에 find는 찾아낸 video를 바로
   출력해줄 것이다.
 
+- +(추가 내용) callback은 console.log() 두개 사이에 넣고 실행하면 callback이
+  가장 늦게 나왔다.
+
 - await이 대단한 이유는 await가 database를 기다려주기 때문이다.
 
 - 코딩 규칙상 await는 function 안에서만 사용이 가능한데 해당 function이
@@ -667,3 +670,14 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - 해시태그가 array로 나와서 당황스러울 땐 value= video.hashtags.join()를 하면
   array가 벗겨진 채로 나온다.
+
+---
+
+<h1>#6.21</h1>
+
+- hashtags.split(",").map((word) => (word.startsWith("#") ? word : `#${word}`));를
+  정리해 보자면 word.startsWith("#") ? word : `#${word}는 만약 옆에 설정한 #와 같이
+  내가 말해주는 무언가가 있다면 그 기호,문자를 추가시키지 않고 넘어갈 수 있다.
+
+- ? word : `#${word}는 word가 #${word}와 같은 꼴이면 그 상태로 그냥 두고
+  그게 아니라면 #${word}로 만든다.
