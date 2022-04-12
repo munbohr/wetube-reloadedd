@@ -681,3 +681,67 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - ? word : `#${word}는 word가 #${word}와 같은 꼴이면 그 상태로 그냥 두고
   그게 아니라면 #${word}로 만든다.
+
+<h1>#6.22</h1>
+
+- video.title을 = something처럼 손수 수동적으로 하는 방법이 있고
+  mongoDB에서 주는 function을 이용해 자동적으로 할 수 있다.
+
+- [번외] Model.exist()는 우리한테 유용하다.
+
+- exists는 ID를 받지 않는다. exist()는 filter를 받는다.
+
+- 우리는 object의 id가 req.params의 id같은 경우를 찾는 것이다.
+  한 마디로, video object를 받는 대신에 true나 false를 받아낸다.
+
+<h1>#6.23</h1>
+
+- mongoose의 document에서 무슨 일이 발생하기 전&후에
+  middleware를 적용할 수 있다.
+
+- mongoose가 업데이트 돼서 니꼬쌤이 쓰셨던 {useNewUrlParser,useUnifiedTopology,useFindAndModify,}를 굳이 따라 쓸 필요가 없어졌다. 경험상 오히려 오류가 남
+
+-  videoSchema.pre("save", async function () {
+  this.hashtags = this.hashtags[0]
+    .split(",")
+    .map((word) => (word.startsWith("#") ? word : `#${word}`));
+});  가 Middleware이다.
+
+---
+<h1>#6.24</h1>
+
+- #6.23에서 우리는 어떤 이벤트가 발생하기 이전에 중간에 가로채서
+  우리 문서를  수정할 수 있다는 것을 배웠다.
+
+- findOneAndUpdate는 save hook를 호출하지 않는다.
+
+- findOneAndUpdate에서는 업데이트하려는 문서에 접근할 수 없다.
+
+- save 훅같은 경우에는 여기 pre("save") middleware를 보면, 여기서는
+  우리가 update하려는 문서에 접근이 가능하다.
+
+- static function을 사용했는데 이해가 안돼서 복습해야하는 파트이다.
+
+---
+<h1>#6.25</h1>
+
+- https://mongoosejs.com/docs/guide.html에서 명령어? 관련 정보를
+  얻을 수 있다.
+
+- delete와 remove의 차이점은 
+
+---
+
+<h1>#6.25</h1>
+
+- Mongoose가 좋은 이유중 하나는 쿼리엔진을 가지고 있다,
+
+- sort({ variable: "desc", }는 순서정렬을 해주는 것인데 desc는 
+  최근의 것이 맨 위로 올라가고 asc는 오래된 것이 위로 올라간다.
+
+- input에서 name 설정해주는 것은 매우 중요하다.
+
+- keyword는 우리가 search할 때에만 생기는 것이다.
+
+- 이 파트에서 req,query로 URL에 있는 모든 정보들을 확인할 수 
+있었다, 그리고 때때로 keyword가 undifined가 될 수도 있었다.
