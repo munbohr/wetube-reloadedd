@@ -565,16 +565,23 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
   - #6.15의 object는 JS에 저장은 되있지만 database에는 저장 되어있지않다.
 
+  - <h3>mongoose는 자동적으로 data에 id를 부여해준다.</h3>
+
 ---
 
   <h1>#6.16</h1>
-  
+
+- mongoose.schema를 사용하는 이유는 그 데이터 타입의 유효성을 검사하기 
+  때문이다. 받은 data type이 유효하지 않으면 그 data를 받지 않는다.
+
 - title을 string으로 받도록 해서 숫자를 사용하더라도 String값으로 반환한다.
 
 - number 값을 받는 object에 string이 있으면 그냥 그 값을 받지 않는다.
 
 - 우리는 video.save를 실행하지만 await 을 해야한다, 그 이유는 데이터를
   database에 전송하는데 시간이 걸리기 때문이다.
+
+- video.save를 하지 않으면 그냥 java object인데 database에 저장된다.
 
 - await video.save(); 이런 식으로 정보를 db에 저장한다. f5를 눌러도
   db에 저장되어 있기때문에 사라지지 않는다.
@@ -585,6 +592,9 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - 값이 잘못되면 웹을 불러오지 않는다. 즉, database는 우리의
   실수를 막아주고 있다.
+
+- 아니면 video.save를 지우고 await Video.create({ data~ }); 해도 정상적으로
+  작동한다.
 
 ---
 
@@ -602,6 +612,8 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - required를 사용하면 그 값이 없어서는 안된다. 안그러면
   무한로딩의 늪..
+
+- mongoose는  똑똑해서 schema에 function을 넣을 때
 
 - 변수에 errorMessage: error. \_message를 사용해서 에러 문구를
   창에 띄울 수 있게 된다. 물론 이것도 mongoose가 만들어주는 것이다!
@@ -703,7 +715,13 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - 우리는 object의 id가 req.params의 id같은 경우를 찾는 것이다.
   한 마디로, video object를 받는 대신에 true나 false를 받아낸다.
 
+- exitst()는 필터를 필요로 하고 영상의 어떤  property도 필터 가능하다.
+ 하지만 findById ~는 꼭 id를 인자로 받는다.
+
 <h1>#6.23</h1>
+
+- middleware의 function 안에는 this라는 키워드가 있는데  이 this는
+  우리가 저장하고자하는 문서를 가리킨다.
 
 - mongoose의 document에서 무슨 일이 발생하기 전&후에
   middleware를 적용할 수 있다.
@@ -721,6 +739,12 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - #6.23에서 우리는 어떤 이벤트가 발생하기 이전에 중간에 가로채서
   우리 문서를  수정할 수 있다는 것을 배웠다.
+
+- Static을 생성하기 위해서 필요한 것은 Schema.static이랑 function과 
+만들고자하는 static의 이름이다.
+
+- 댓글 보니 Static은 아마 reuse(재사용) function을 위해 쓰이는 것같다.
+
 
 - findOneAndUpdate는 save hook를 호출하지 않는다.
 
